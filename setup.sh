@@ -2,14 +2,19 @@
 
 [[ -d ~/bin ]] || mkdir ~/bin
 
-cd home
+LOC=$(dirname $(greadlink -f $0))
+pushd $LOC/home >& /dev/null
+
 for SRC in $(find . -type f -not -name .DS_Store); do
 	TARGET=$(greadlink -f ~/$SRC)
 	SOURCE=$(greadlink -f $SRC)
 
 	if [[ -f $TARGET ]]; then
-		echo "Not overwriting $TARGET"
-	else
-		ln -fs $SOURCE $TARGET
+		echo "Backing up $TARGET to ${TARGET}.bak"
+		mv $TARGET ${TARGET}.bak
 	fi
+
+	ln -fs $SOURCE $TARGET
 done
+
+popd >& /dev/null
