@@ -6,7 +6,7 @@ LOC=$(dirname $(greadlink -f $0))
 pushd $LOC/home >& /dev/null
 
 for SRC in $(find . -type f -not -name .DS_Store); do
-	TARGET=$(greadlink -f ~/$SRC)
+	TARGET=$HOME/$SRC
 	SOURCE=$(greadlink -f $SRC)
 
 	if [[ -f $TARGET ]]; then
@@ -14,6 +14,7 @@ for SRC in $(find . -type f -not -name .DS_Store); do
 		mv $TARGET ${TARGET}.bak
 	fi
 
+    echo "ln -fs $SOURCE $TARGET"
 	ln -fs $SOURCE $TARGET
 done
 
