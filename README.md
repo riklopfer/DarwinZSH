@@ -3,9 +3,6 @@ Darwin ZSH Rig
 
 Setting up a zsh rig on MacOS. 
 
-**[TL;DR `.zshrc`](.zshrc)** file at the end of the day
-
-
 Terminal Commands
 -----------------
 
@@ -25,7 +22,7 @@ Terminal Commands
 
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-1. `brew install` a bunch of stuff
+1. `brew install` a bunch of stuff.
 
         xargs brew install < brew_things.txt
 
