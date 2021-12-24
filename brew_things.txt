@@ -2,5 +2,7 @@ tree
 coreutils
 git
 htop
-pure
 miniforge
+pure
+zsh-syntax-highlighting
+zsh-autosuggestions
