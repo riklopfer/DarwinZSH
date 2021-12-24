@@ -3,7 +3,7 @@ Darwin ZSH Rig
 
 Setting up a zsh rig on MacOS. 
 
-**[TL;DR `.zshrc`](home/.zshrc)** file at the end of the day
+**[TL;DR `.zshrc`](.zshrc)** file at the end of the day
 
 
 Terminal Commands
