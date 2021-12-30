@@ -10,10 +10,6 @@ Terminal Commands
 
         chsh -s /bin/zsh
 
-1. (_optional_) copy `.zshrc` -- if you don't do this, you should make changes as described below.
-
-        cp .zshrc ~/.zshrc
-
 1. Install [Homebrew](https://brew.sh)
 
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -26,6 +22,10 @@ Terminal Commands
 
         xargs brew install < brew_things.txt
 
+1. (_optional_) copy `.zshrc` -- if you don't do this, you should make changes as described below.
+
+        cp .zshrc ~/.zshrc
+
 1. `conda init` -- this will modify `.zshrc`
 
         conda init zsh
@@ -37,6 +37,7 @@ Terminal Commands
 1. [Complete pure install](https://github.com/sindresorhus/pure#getting-started)
 
         # .zshrc
+        fpath+=/opt/homebrew/share/zsh/site-functions
         autoload -U promptinit; promptinit
         prompt pure
 
