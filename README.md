@@ -22,41 +22,25 @@ Terminal Commands
 
         xargs brew install < brew_things.txt
 
-1. (_optional_) copy `.zshrc` -- if you don't do this, you should make changes as described below.
+1. Copy `.zshrc` -- if you don't do this, you should make changes as described below.
 
         cp .zshrc ~/.zshrc
+
+1. Copy `.zprofile`
+
+        cp .zprofile ~/.zprofile
 
 1. `conda init` -- this will modify `.zshrc`
 
         conda init zsh
 
+1. conda autocomplete
 
-`~/.zshrc` Edits
-----------------
+        git clone https://github.com/esc/conda-zsh-completion ~/.zsh/conda-zsh-completion
 
-1. [Complete pure install](https://github.com/sindresorhus/pure#getting-started)
+1. source files
 
-        # .zshrc
-        fpath+=/opt/homebrew/share/zsh/site-functions
-        autoload -U promptinit; promptinit
-        prompt pure
+        source ~/.zprofile; source ~/.zshrc
 
-1. Make `subl` the default editor
-
-        export EDITOR='subl -w'
-
-
-conda auto complete
-===================
-
-```shell
-git clone https://github.com/esc/conda-zsh-completion ~/.zsh/conda-zsh-completion
-```
-
-
-add to `~/.zshrc`
-
-        fpath+=~/.zsh/conda-zsh-completion
-        compinit conda
 
 
