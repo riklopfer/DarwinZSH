@@ -57,5 +57,5 @@ keybind = shift+super+right=next_tab
 keybind = shift+super+left=previous_tab
 
 # Global keybinding for quick terminal 
-keybind = global:super+grave_accent=toggle_quick_terminal
+keybind = global:alt+grave_accent=toggle_quick_terminal
 ```
