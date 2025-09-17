@@ -42,5 +42,20 @@ Terminal Commands
 
         source ~/.zprofile; source ~/.zshrc
 
+[Ghostty](https://ghostty.org)
+----
 
+```
+## Default window size
+window-height = 45
+window-width  = 128
 
+font-size     = 15
+
+# Cycle through tabes as per MacOS terminal
+keybind = shift+super+right=next_tab
+keybind = shift+super+left=previous_tab
+
+# Global keybinding for quick terminal 
+keybind = global:super+grave_accent=toggle_quick_terminal
+```
