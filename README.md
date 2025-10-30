@@ -52,6 +52,9 @@ window-width  = 128
 
 font-size     = 15
 
+# disable paste protection?
+clipboard-paste-protection = false
+
 # Cycle through tabes as per MacOS terminal
 keybind = shift+super+right=next_tab
 keybind = shift+super+left=previous_tab
