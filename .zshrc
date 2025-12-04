@@ -117,12 +117,13 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 function cleanBranches() {
     git fetch --prune || return 1
-    TO_REMOVE=$(git for-each-ref --format '%(if:equals=gone)%(upstream:track,nobracket)%(then)%(refname:short)%(end)' refs/heads/)
-    if [[ "${TO_REMOVE}" ]]; then
-        git branch -D ${TO_REMOVE}
-    else
-        echo "No dangling branches."
-    fi
+
+    for BRANCH in $(git for-each-ref --format '%(if:equals=gone)%(upstream:track,nobracket)%(then)%(refname:short)%(end)' refs/heads/); do
+        BRANCH=$(echo $BRANCH | tr -d '[:space:]')
+        if [[ "$BRANCH" ]]; then
+            git branch -vD $BRANCH
+        fi
+    done
 }
 
 function cleanGit() {
