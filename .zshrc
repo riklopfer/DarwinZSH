@@ -115,3 +115,18 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
+function cleanBranches() {
+    git fetch --prune || return 1
+    TO_REMOVE=$(git for-each-ref --format '%(if:equals=gone)%(upstream:track,nobracket)%(then)%(refname:short)%(end)' refs/heads/)
+    if [[ "${TO_REMOVE}" ]]; then
+        git branch -D ${TO_REMOVE}
+    else
+        echo "No dangling branches."
+    fi
+}
+
+function cleanGit() {
+    git "$@" clean -fdx -e .idea -e "*.iml"
+}
+
+
